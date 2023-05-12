@@ -17,11 +17,11 @@ pipeline {
         sh 'mvn clean verify'
       }
     }
-    // stage('Publish Test Results') {
-    //   steps {
-    //     // Publish the test results to Jenkins
-    //     junit '/Users/richin/.jenkins/workspace/API Automation/target/surefire-reports/*.xml'
-    //   }
-    // }
+    stage('Publish Test Results') {
+      steps {
+        // Publish the test results to Jenkins
+        junit '${WORKSPACE}/target/surefire-reports/*.xml'
+      }
+    }
   }
 }
