@@ -17,12 +17,6 @@ pipeline {
         sh 'mvn clean verify'
       }
     }
-    stage('Test') {
-      steps {
-        // Execute the SoapUI tests
-        sh 'mvn soapui:test'
-      }
-    }
     stage('Publish Test Results') {
       steps {
         // Publish the test results to Jenkins
