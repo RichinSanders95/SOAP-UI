@@ -20,7 +20,7 @@ pipeline {
     stage('Publish Test Results') {
       steps {
         // Publish the test results to Jenkins
-        junit '~/target/soapui-output/*.xml'
+        junit '~/target/surefire-reports/*.xml'
       }
     }
   }
