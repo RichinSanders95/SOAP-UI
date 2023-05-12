@@ -18,6 +18,8 @@ pipeline {
         sh 'tree'
       }
     }
+
+
     // stage('Publish Test Results') {
     //   steps {
     //     // Publish the test results to Jenkins
@@ -26,4 +28,11 @@ pipeline {
     //   }
     // }
   }
+  post {
+    success {
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: '', useWrapperFileDirectly: true])
+    }
+  }
+
+
 }
