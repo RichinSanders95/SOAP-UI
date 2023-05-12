@@ -20,7 +20,7 @@ pipeline {
     stage('Publish Test Results') {
       steps {
         // Publish the test results to Jenkins
-        junit './target/surefire-reports/*.xml'
+        junit '/Users/richin/.jenkins/workspace/API Automation/target/surefire-reports/*.xml'
       }
     }
   }
