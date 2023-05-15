@@ -56,8 +56,9 @@
                         <configuration>
                             <testFailIgnore>true</testFailIgnore>
                             <projectFile>AutomateApps.xml</projectFile>
-                            <testSuite>E2E Apps</testSuite>
-                            <!-- <testCase>Build an app with Template</testCase> -->
+                            <testCase>Create to Delete</testCase>
+                            <testCase>Build an app</testCase>
+                            <testCase>Build an app with Template</testCase>
                             <printReport>true</printReport>
                             <outputFolder>${basedir}/target/surefire-reports</outputFolder>
                             <junitReport>true</junitReport>
