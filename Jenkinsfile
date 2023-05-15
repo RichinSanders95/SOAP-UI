@@ -14,8 +14,9 @@ pipeline {
     stage('Build') {
       steps {
         // Build the project with Maven
-        sh 'mvn clean verify site surefire-report:report'
-        sh 'tree'
+        sh 'mvn clean verify' 
+        //sh 'mvn clean verify site surefire-report:report'
+        //sh 'tree'
       }
     }
 
@@ -28,11 +29,11 @@ pipeline {
     //   }
     // }
   }
-  post {
-    success {
-      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: '', useWrapperFileDirectly: true])
-    }
-  }
+  // post {
+  //   success {
+  //     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: '', useWrapperFileDirectly: true])
+  //   }
+  // }
 
 
 }
