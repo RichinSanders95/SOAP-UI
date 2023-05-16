@@ -19,13 +19,13 @@ pipeline {
         //sh 'tree'
       }
     }
-    // stage('Publish Test Results') {
-    //   steps {
-    // //     // Publish the test results to Jenkins
-    //         sh 'mvn surefire-report:report'
-    //         //junit '${basedir}/target/surefire-reports.html'
-    //   }
-    // }
+    stage('Publish Test Results') {
+      steps {
+    //     // Publish the test results to Jenkins
+            //sh 'mvn surefire-report:report'
+            junit '${basedir}/target/site/surefire-reports.html'
+      }
+    }
 }
   post {
     success {
