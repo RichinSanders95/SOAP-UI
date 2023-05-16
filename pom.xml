@@ -16,7 +16,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>com.smartbear.soapui</groupId>
+                <groupId>eviware</groupId>
                 <artifactId>soapui-maven-plugin</artifactId>
                 <version>5.7.0</version>
                 <dependencies>
@@ -36,7 +36,7 @@
                         <version>3.10-FINAL</version>
                     </dependency>
                     <dependency>
-                        <groupId>com.smartbear.soapui</groupId>
+                        <groupId>eviware</groupId>
                         <artifactId>soapui</artifactId>
                         <version>5.7.0</version>
                         <exclusions>
@@ -57,9 +57,9 @@
                             <testFailIgnore>true</testFailIgnore>
                             <projectFile>AutomateApps.xml</projectFile>
                             <testSuite>E2E Apps</testSuite>
-                            <!-- <testCase>Create to Delete</testCase> -->
-                            <printReport>true</printReport>
                             <ignoreWarnings>true</ignoreWarnings>
+                            <testCase>Create to Delete</testCase>
+                            <printReport>true</printReport>
                             <outputFolder>${basedir}/target/surefire-reports</outputFolder>
                             <junitReport>true</junitReport>
                             <exportAll>true</exportAll>
