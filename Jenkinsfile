@@ -11,19 +11,19 @@ pipeline {
         git 'https://github.com/RichinSanders95/SOAP-UI.git'
       }
     }
-    stage('Build') {
-      steps {
-        // Build the project with Maven
-        sh 'mvn clean verify | grep -v warning' 
-        //sh 'mvn clean verify site surefire-report:report'
-        //sh 'tree'
-      }
-    }
+    // stage('Build') {
+    //   steps {
+    //     // Build the project with Maven
+    //     //sh 'mvn clean verify | grep -v warning' 
+    //     //sh 'mvn clean verify site surefire-report:report'
+    //     //sh 'tree'
+    //   }
+    // }
     stage('Publish Test Results') {
       steps {
     //     // Publish the test results to Jenkins
-            //sh 'mvn surefire-report:report'
-            junit '${basedir}/target/site/surefire-reports.html'
+            sh 'mvn surefire-report:report'
+            //junit '${basedir}/target/site/surefire-reports.html'
       }
     }
 }
