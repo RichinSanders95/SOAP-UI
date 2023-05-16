@@ -21,13 +21,13 @@ pipeline {
     }
 
 
-    // stage('Publish Test Results') {
-    //   steps {
+    stage('Publish Test Results') {
+      steps {
     //     // Publish the test results to Jenkins
     //     sh 'mvn surefire-report:report'
-    //     // junit '${basedir}/target/surefire-report.html'
-    //   }
-    // }
+            junit '${basedir}/target/surefire-reports.html'
+      }
+    }
   }
   // post {
   //   success {
