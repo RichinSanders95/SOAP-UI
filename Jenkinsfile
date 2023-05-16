@@ -24,16 +24,16 @@ pipeline {
     stage('Publish Test Results') {
       steps {
     //     // Publish the test results to Jenkins
-    //     sh 'mvn surefire-report:report'
-            junit '${basedir}/target/surefire-reports.html'
+            sh 'mvn surefire-report:report'
+            //junit '${basedir}/target/surefire-reports.html'
       }
     }
   }
-  // post {
-  //   success {
-  //     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: '', useWrapperFileDirectly: true])
-  //   }
-  // }
+  post {
+    success {
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: '', useWrapperFileDirectly: true])
+    }
+  }
 
 
 }
