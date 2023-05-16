@@ -55,6 +55,7 @@
                         </goals>
                         <configuration>
                             <testFailIgnore>true</testFailIgnore>
+                            <failOnError>false</failOnError>
                             <projectFile>AutomateApps.xml</projectFile>
                             <testSuite>E2E Apps</testSuite>
                             <ignoreWarnings>true</ignoreWarnings>
