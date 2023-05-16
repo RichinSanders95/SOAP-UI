@@ -15,6 +15,13 @@
     </pluginRepositories>
     <build>
         <plugins>
+        <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                </configuration>
+                </plugin>
             <plugin>
                 <groupId>com.smartbear.soapui</groupId>
                 <artifactId>soapui-maven-plugin</artifactId>
@@ -55,7 +62,6 @@
                         </goals>
                         <configuration>
                             <testFailIgnore>true</testFailIgnore>
-                            <failOnError>false</failOnError>
                             <projectFile>AutomateApps.xml</projectFile>
                             <testSuite>E2E Apps</testSuite>
                             <ignoreWarnings>true</ignoreWarnings>
