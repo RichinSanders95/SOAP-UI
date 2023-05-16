@@ -16,7 +16,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>eviware</groupId>
+                <groupId>com.smartbear.soapui</groupId>
                 <artifactId>soapui-maven-plugin</artifactId>
                 <version>5.7.0</version>
                 <dependencies>
@@ -36,7 +36,7 @@
                         <version>3.10-FINAL</version>
                     </dependency>
                     <dependency>
-                        <groupId>eviware</groupId>
+                        <groupId>com.smartbear.soapui</groupId>
                         <artifactId>soapui</artifactId>
                         <version>5.7.0</version>
                         <exclusions>
