@@ -66,7 +66,7 @@
                             <testSuite>E2E Apps</testSuite>
                             <ignoreWarnings>true</ignoreWarnings>
                             <testCase>Create to Delete</testCase>
-                            <testCase>Build an app</testCase>
+                            <testCase>Build an app with Template</testCase>
                             <printReport>true</printReport>
                             <outputFolder>${basedir}/target/surefire-reports</outputFolder>
                             <junitReport>true</junitReport>
