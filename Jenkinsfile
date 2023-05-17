@@ -22,14 +22,14 @@ pipeline {
     stage('Publish Test Results') {
       steps {
     //     // Publish the test results to Jenkins
-            sh 'mvn surefire-report:report | grep -v warning'
+            sh 'mvn clean surefire-report:report | grep -v warning'
             //junit '${basedir}/target/site/surefire-reports.html'
       }
     }
 }
   post {
     success {
-      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: '', useWrapperFileDirectly: true])
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Apps API Test Report', reportTitles: '', useWrapperFileDirectly: true])
     }
   }
 
