@@ -22,7 +22,7 @@ pipeline {
     stage('Publish Test Results') {
       steps {
     //     // Publish the test results to Jenkins
-            sh 'mvn clean surefire-report:report | grep -v warning'
+            sh 'mvn surefire-report:report | grep -v warning'
             //junit '${basedir}/target/site/surefire-reports.html'
       }
     }
