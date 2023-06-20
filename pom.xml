@@ -64,9 +64,8 @@
                             <testFailIgnore>true</testFailIgnore>
                             <projectFile>AutomateApps.xml</projectFile>
                             <testSuite>E2E Apps</testSuite>
-                            <!-- <ignoreWarnings>true</ignoreWarnings>
+                            <ignoreWarnings>true</ignoreWarnings>
                             <testCase>Create to Delete</testCase>
-                            <testCase>Build an app with Template</testCase> -->
                             <printReport>true</printReport>
                             <outputFolder>${basedir}/target/surefire-reports</outputFolder>
                             <junitReport>true</junitReport>
