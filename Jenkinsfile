@@ -14,25 +14,25 @@ pipeline {
     // stage('Build') {
     //   steps {
     //     // Build the project with Maven
-    //     //sh 'mvn clean verify | grep -v warning' 
+         sh 'mvn clean verify | grep -v warning' 
     //     //sh 'mvn clean verify site surefire-report:report'
     //     sh 'tree'
     //   }
     // }
-    stage('Publish Test Results') {
-      steps {
+    // stage('Publish Test Results') {
+      // steps {
     //     // Publish the test results to Jenkins
-            sh 'mvn surefire-report:report'
+            // sh 'mvn surefire-report:report'
             // sh 'mvn clean verify site surefire-report:report'
             //junit '${basedir}/target/site/surefire-reports.html'
       }
     }
 }
-  // post {
-  //   success {
-  //     publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Apps API Test Report', reportTitles: '', useWrapperFileDirectly: true])
-  //   }
-  // }
+  post {
+    success {
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Apps API Test Report', reportTitles: '', useWrapperFileDirectly: true])
+    }
+  }
 
 
 }
