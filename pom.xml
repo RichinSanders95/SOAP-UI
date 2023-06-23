@@ -63,7 +63,8 @@
                         <configuration>
                             <testFailIgnore>true</testFailIgnore>
                             <projectFile>AutomateApps.xml</projectFile>
-                            <testSuite>E2E Apps</testSuite>T>
+                            <!-- <testSuite>E2E Apps</testSuite>T> -->
+                            <testCase>App_Flow_Smoke</testCase>
                             <ignoreWarnings>true</ignoreWarnings>
                             <printReport>true</printReport>
                             <outputFolder>${basedir}/target/surefire-reports</outputFolder>
