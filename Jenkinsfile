@@ -11,7 +11,7 @@ pipeline {
         git 'https://github.com/RichinSanders95/SOAP-UI.git'
       }
     }
-     stage('Build') {
+    stage('Build') {
        steps {
          sh 'mvn clean verify site surefire-report:report'
        }
@@ -23,7 +23,6 @@ pipeline {
             // sh 'mvn clean verify site surefire-report:report'
             //junit '${basedir}/target/site/surefire-reports.html'
       }
-    }
   post {
     success {
       publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Apps API Test Report', reportTitles: '', useWrapperFileDirectly: true])
