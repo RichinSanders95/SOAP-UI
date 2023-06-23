@@ -28,11 +28,11 @@ pipeline {
       }
     }
 }
-  post {
-    success {
-      publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Apps API Test Report', reportTitles: '', useWrapperFileDirectly: true])
-    }
-  }
+  // post {
+  //   success {
+  //     publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/site', reportFiles: 'surefire-report.html', reportName: 'Apps API Test Report', reportTitles: '', useWrapperFileDirectly: true])
+  //   }
+  // }
 
 
 }
