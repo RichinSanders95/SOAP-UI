@@ -11,12 +11,11 @@ pipeline {
         git 'https://github.com/RichinSanders95/SOAP-UI.git'
       }
     }
-  }
-    // stage('Build') {
-    //    steps {
-    //      sh 'mvn clean verify site surefire-report:report'
-    //    }
-    // }
+    stage('Build') {
+       steps {
+         sh 'mvn clean verify site surefire-report:report'
+       }
+    }
     stage('Publish Test Results') {
        steps {
             // Publish the test results to Jenkins
