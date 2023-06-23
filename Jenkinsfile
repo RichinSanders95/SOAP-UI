@@ -12,13 +12,13 @@ pipeline {
       }
     }
      stage('Build') {
-    //   steps {
+       steps {
     //     // Build the project with Maven
         //  sh 'mvn clean verify | grep -v warning' 
          sh 'mvn clean verify site surefire-report:report'
     //     sh 'tree'
        }
-    // }
+     }
     // stage('Publish Test Results') {
       // steps {
     //     // Publish the test results to Jenkins
